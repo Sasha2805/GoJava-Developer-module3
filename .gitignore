@@ -2,7 +2,7 @@
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 /.idea/
-*.properties
+.properties
 
 # User-specific stuff:
 .idea/**/workspace.xml
