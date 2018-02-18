@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public abstract class ModelView<T> {
     private AbstractHibDao<T> abstractHibDao;
-    private Scanner in = new Scanner(System.in);
+    private Scanner in = MainView.getScanner();
 
     public final void setClass(AbstractHibDao<T> abstractHibDao){
         this.abstractHibDao = abstractHibDao;

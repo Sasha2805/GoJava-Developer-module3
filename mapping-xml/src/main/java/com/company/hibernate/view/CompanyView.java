@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class CompanyView extends ModelView<Company> {
     private CompanyDaoImpl companyDao = new CompanyDaoImpl();
-    private Scanner in = MainView.SCANNER;
+    private Scanner in = MainView.getScanner();
 
     public CompanyView(){
         super.setClass(companyDao);

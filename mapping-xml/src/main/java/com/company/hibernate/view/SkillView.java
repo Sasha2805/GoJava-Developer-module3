@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class SkillView extends ModelView<Skill> {
     private SkillDaoImpl skillDao = new SkillDaoImpl();
-    private Scanner in = MainView.SCANNER;
+    private Scanner in = MainView.getScanner();
 
     public SkillView(){
         super.setClass(skillDao);

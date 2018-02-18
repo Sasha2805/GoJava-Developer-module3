@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class CustomerView extends ModelView<Customer> {
     private CustomerDaoImpl customerDao = new CustomerDaoImpl();
-    private Scanner in = MainView.SCANNER;
+    private Scanner in = MainView.getScanner();
 
     public CustomerView(){
         super.setClass(customerDao);

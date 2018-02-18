@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class DeveloperView extends ModelView<Developer>{
     private DeveloperDaoImpl developerDao = new DeveloperDaoImpl();
-    private Scanner in = MainView.SCANNER;
+    private Scanner in = MainView.getScanner();
 
     public DeveloperView(){
         super.setClass(developerDao);
