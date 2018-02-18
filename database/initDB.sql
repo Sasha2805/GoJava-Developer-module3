@@ -8,7 +8,7 @@ CREATE TABLE `hibernate`.`developers`(
 	`first_name` VARCHAR(50) NOT NULL,
 	`last_name` VARCHAR(100) NOT NULL,
 	`age` INT,
-	`gender` ENUM('female', 'male'),
+	`gender` ENUM('MALE', 'FEMALE') NOT NULL,
 	`salary` DECIMAL(10, 2)
 );
 
@@ -16,7 +16,7 @@ CREATE TABLE `hibernate`.`developers`(
 CREATE TABLE `hibernate`.`skills`(
 	`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`skill` VARCHAR(50) NOT NULL,
-	`skill_level` VARCHAR(50) NOT NULL,
+	`skill_level` ENUM('JUNIOR', 'MIDDLE', 'SENIOR') NOT NULL,
 	UNIQUE (`skill`, `skill_level`)
 );
 

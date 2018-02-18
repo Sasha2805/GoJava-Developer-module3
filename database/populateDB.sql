@@ -1,25 +1,25 @@
 USE hibernate;
 
 # Creating new records in table developers
-INSERT INTO `hibernate`.`developers` (`id`, `first_name`, `last_name`, `age`, `gender`, `salary`) VALUES (1, 'John', 'Smith', 25, 'male', 1000);
-INSERT INTO `hibernate`.`developers` (`id`, `first_name`, `last_name`, `age`, `gender`, `salary`) VALUES (2, 'Sarah', 'Jones', 22, 'female', 1000.50);
-INSERT INTO `hibernate`.`developers` (`id`, `first_name`, `last_name`, `age`, `gender`, `salary`) VALUES (3, 'Daniel', 'Brown', 25, 'male', 2055);
-INSERT INTO `hibernate`.`developers` (`id`, `first_name`, `last_name`, `age`, `gender`, `salary`) VALUES (4, 'Olivia', 'Evans', 25, 'female', 3000);
-INSERT INTO `hibernate`.`developers` (`id`, `first_name`, `last_name`, `age`, `gender`, `salary`) VALUES (5, 'Daniel', 'Smith', 25, 'male', 800);
+INSERT INTO `hibernate`.`developers` (`id`, `first_name`, `last_name`, `age`, `gender`, `salary`) VALUES (1, 'John', 'Smith', 25, 'MALE', 1000);
+INSERT INTO `hibernate`.`developers` (`id`, `first_name`, `last_name`, `age`, `gender`, `salary`) VALUES (2, 'Sarah', 'Jones', 22, 'FEMALE', 1000.50);
+INSERT INTO `hibernate`.`developers` (`id`, `first_name`, `last_name`, `age`, `gender`, `salary`) VALUES (3, 'Daniel', 'Brown', 25, 'MALE', 2055);
+INSERT INTO `hibernate`.`developers` (`id`, `first_name`, `last_name`, `age`, `gender`, `salary`) VALUES (4, 'Olivia', 'Evans', 25, 'FEMALE', 3000);
+INSERT INTO `hibernate`.`developers` (`id`, `first_name`, `last_name`, `age`, `gender`, `salary`) VALUES (5, 'Daniel', 'Smith', 25, 'MALE', 800);
 
 # Creating new records in table skills
-INSERT INTO `hibernate`.`skills` (`id`, `skill`, `skill_level`) VALUES (1, 'Java', 'Junior');
-INSERT INTO `hibernate`.`skills` (`id`, `skill`, `skill_level`) VALUES (2, 'Java', 'Middle');
-INSERT INTO `hibernate`.`skills` (`id`, `skill`, `skill_level`) VALUES (3, 'Java', 'Senior');
-INSERT INTO `hibernate`.`skills` (`id`, `skill`, `skill_level`) VALUES (4, 'C++', 'Junior');
-INSERT INTO `hibernate`.`skills` (`id`, `skill`, `skill_level`) VALUES (5, 'C++', 'Middle');
-INSERT INTO `hibernate`.`skills` (`id`, `skill`, `skill_level`) VALUES (6, 'C++', 'Senior');
-INSERT INTO `hibernate`.`skills` (`id`, `skill`, `skill_level`) VALUES (7, 'C#', 'Junior');
-INSERT INTO `hibernate`.`skills` (`id`, `skill`, `skill_level`) VALUES (8, 'C#', 'Middle');
-INSERT INTO `hibernate`.`skills` (`id`, `skill`, `skill_level`) VALUES (9, 'C#', 'Senior');
-INSERT INTO `hibernate`.`skills` (`id`, `skill`, `skill_level`) VALUES (10, 'JavaScript', 'Junior');
-INSERT INTO `hibernate`.`skills` (`id`, `skill`, `skill_level`) VALUES (11, 'JavaScript', 'Middle');
-INSERT INTO `hibernate`.`skills` (`id`, `skill`, `skill_level`) VALUES (12, 'JavaScript', 'Senior');
+INSERT INTO `hibernate`.`skills` (`id`, `skill`, `skill_level`) VALUES (1, 'Java', 'JUNIOR');
+INSERT INTO `hibernate`.`skills` (`id`, `skill`, `skill_level`) VALUES (2, 'Java', 'MIDDLE');
+INSERT INTO `hibernate`.`skills` (`id`, `skill`, `skill_level`) VALUES (3, 'Java', 'SENIOR');
+INSERT INTO `hibernate`.`skills` (`id`, `skill`, `skill_level`) VALUES (4, 'C++', 'JUNIOR');
+INSERT INTO `hibernate`.`skills` (`id`, `skill`, `skill_level`) VALUES (5, 'C++', 'MIDDLE');
+INSERT INTO `hibernate`.`skills` (`id`, `skill`, `skill_level`) VALUES (6, 'C++', 'SENIOR');
+INSERT INTO `hibernate`.`skills` (`id`, `skill`, `skill_level`) VALUES (7, 'C#', 'JUNIOR');
+INSERT INTO `hibernate`.`skills` (`id`, `skill`, `skill_level`) VALUES (8, 'C#', 'MIDDLE');
+INSERT INTO `hibernate`.`skills` (`id`, `skill`, `skill_level`) VALUES (9, 'C#', 'SENIOR');
+INSERT INTO `hibernate`.`skills` (`id`, `skill`, `skill_level`) VALUES (10, 'JavaScript', 'JUNIOR');
+INSERT INTO `hibernate`.`skills` (`id`, `skill`, `skill_level`) VALUES (11, 'JavaScript', 'MIDDLE');
+INSERT INTO `hibernate`.`skills` (`id`, `skill`, `skill_level`) VALUES (12, 'JavaScript', 'SENIOR');
 
 # Creating new records in table projects
 INSERT INTO `hibernate`.`projects` (`id`, `name`, `info`, `cost`) VALUES (1, 'YouTube Analyzer', 'Application for YouTube channel analytics', 5000);
