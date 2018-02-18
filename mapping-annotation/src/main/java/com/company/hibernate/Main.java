@@ -1,16 +1,11 @@
 package com.company.hibernate;
 
-import com.company.hibernate.dao.jpaImpl.DeveloperDaoImpl;
-import com.company.hibernate.model.Developer;
+import com.company.hibernate.view.MainView;
 
-public class Test {
+public class Main {
     public static void main(String[] args) {
-        DeveloperDaoImpl developerDao = new DeveloperDaoImpl();
-        Developer developer = developerDao.getById(1L);
-        System.out.println(developer.toString());
-        developer.getSkills().forEach(i -> System.out.println(i.toString()));
-
-       // developerDao.getAll().forEach(i -> System.out.println(i.toString()));
+        MainView.getView();
+        MainView.SCANNER.close();
         System.exit(0);
     }
 }
