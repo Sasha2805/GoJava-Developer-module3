@@ -1,6 +1,6 @@
 package com.company.hibernate.view;
 
-import com.company.hibernate.dao.jpaImpl.DeveloperDaoImpl;
+import com.company.hibernate.dao.hibernateImpl.DeveloperDaoImpl;
 import com.company.hibernate.model.Developer;
 import com.company.hibernate.model.enums.Gender;
 import java.math.BigDecimal;

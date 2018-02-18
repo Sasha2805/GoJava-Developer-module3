@@ -1,6 +1,6 @@
 package com.company.hibernate.view;
 
-import com.company.hibernate.dao.jpaImpl.SkillDaoImpl;
+import com.company.hibernate.dao.hibernateImpl.SkillDaoImpl;
 import com.company.hibernate.model.Skill;
 import com.company.hibernate.model.enums.SkillLevel;
 import java.util.Scanner;

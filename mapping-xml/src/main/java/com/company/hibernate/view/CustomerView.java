@@ -1,6 +1,6 @@
 package com.company.hibernate.view;
 
-import com.company.hibernate.dao.jpaImpl.CustomerDaoImpl;
+import com.company.hibernate.dao.hibernateImpl.CustomerDaoImpl;
 import com.company.hibernate.model.Customer;
 import java.util.Scanner;
 

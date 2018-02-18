@@ -1,15 +1,15 @@
 package com.company.hibernate.view;
 
-import com.company.hibernate.dao.AbstractJpaDao;
+import com.company.hibernate.dao.AbstractHibDao;
 import java.util.Scanner;
 
 public abstract class ModelView<T> {
-    private AbstractJpaDao<T> abstractJpaDao;
+    private AbstractHibDao<T> abstractHibDao;
     private Scanner in = new Scanner(System.in);
 
-    public final void setClass(AbstractJpaDao<T> abstractJpaDao){
-        this.abstractJpaDao = abstractJpaDao;
-    }
+    public final void setClass(AbstractHibDao<T> abstractHibDao){
+        this.abstractHibDao = abstractHibDao;
+}
 
     public void getView(){
         System.out.println("Select an action:");
@@ -41,19 +41,19 @@ public abstract class ModelView<T> {
     private void selectById(){
         System.out.print("Enter id: ");
         Long id = in.nextLong();
-        System.out.println(abstractJpaDao.getById(id));
+        System.out.println(abstractHibDao.getById(id));
         this.backToActions();
     }
 
     private void selectAll(){
-        abstractJpaDao.getAll().forEach(i -> System.out.println(i.toString()));
+        abstractHibDao.getAll().forEach(i -> System.out.println(i.toString()));
         this.backToActions();
     }
 
     private void remove(){
         System.out.print("Enter id: ");
         Long id = in.nextLong();
-        abstractJpaDao.remove(id);
+        abstractHibDao.remove(id);
         System.out.println("Object deleted.");
         this.backToActions();
     }

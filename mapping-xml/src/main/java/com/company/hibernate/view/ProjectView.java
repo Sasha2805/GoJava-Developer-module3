@@ -1,6 +1,6 @@
 package com.company.hibernate.view;
 
-import com.company.hibernate.dao.jpaImpl.ProjectDaoImpl;
+import com.company.hibernate.dao.hibernateImpl.ProjectDaoImpl;
 import com.company.hibernate.model.Project;
 import java.math.BigDecimal;
 import java.util.Scanner;
