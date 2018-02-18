@@ -1,59 +1,37 @@
-package com.company.hibernate.dao.hibernate;
+package com.company.hibernate.dao.hibernateImpl;
 
-import com.company.hibernate.dao.SkillDAO;
+import com.company.hibernate.dao.AbstractHibDao;
 import com.company.hibernate.model.Skill;
-import com.company.hibernate.util.HibernateUtil;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.query.Query;
 import java.util.List;
 
-public class SkillDAOImpl implements SkillDAO {
-    private SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+public class SkillDaoImpl extends AbstractHibDao<Skill> {
+
+    public SkillDaoImpl(){
+        super.setClass(Skill.class);
+    }
 
     @Override
     public void save(Skill skill) {
-        Session session = this.sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-        session.save(skill);
-        transaction.commit();
-        session.close();
+        super.save(skill);
     }
 
     @Override
     public Skill getById(Long id) {
-        Session session = this.sessionFactory.openSession();
-        Skill skill = session.get(Skill.class, id);
-        session.close();
-        return skill;
+        return super.getById(id);
     }
 
     @Override
     public void remove(Long id) {
-        Session session = this.sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-        Skill skill = session.get(Skill.class, id);
-        session.delete(skill);
-        transaction.commit();
-        session.close();
+        super.remove(id);
     }
 
     @Override
     public List<Skill> getAll() {
-        Session session = this.sessionFactory.openSession();
-        Query query = session.createQuery("FROM Skill");
-        List<Skill> result = query.list();
-        session.close();
-        return result;
+        return super.getAll();
     }
 
     @Override
     public void update(Skill skill) {
-        Session session = this.sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-        session.update(skill);
-        transaction.commit();
-        session.close();
+        super.update(skill);
     }
 }

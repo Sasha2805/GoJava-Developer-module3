@@ -1,59 +1,37 @@
-package com.company.hibernate.dao.hibernate;
+package com.company.hibernate.dao.hibernateImpl;
 
-import com.company.hibernate.dao.CustomerDAO;
+import com.company.hibernate.dao.AbstractHibDao;
 import com.company.hibernate.model.Customer;
-import com.company.hibernate.util.HibernateUtil;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.query.Query;
 import java.util.List;
 
-public class CustomerDAOImpl implements CustomerDAO {
-    private SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+public class CustomerDaoImpl extends AbstractHibDao<Customer> {
+
+    public CustomerDaoImpl() {
+        super.setClass(Customer.class);
+    }
 
     @Override
     public void save(Customer customer) {
-        Session session = this.sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-        session.save(customer);
-        transaction.commit();
-        session.close();
+        super.save(customer);
     }
 
     @Override
     public Customer getById(Long id) {
-        Session session = this.sessionFactory.openSession();
-        Customer customer = session.get(Customer.class, id);
-        session.close();
-        return customer;
+        return super.getById(id);
     }
 
     @Override
     public void remove(Long id) {
-        Session session = this.sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-        Customer customer = session.get(Customer.class, id);
-        session.delete(customer);
-        transaction.commit();
-        session.close();
+        super.remove(id);
     }
 
     @Override
     public List<Customer> getAll() {
-        Session session = this.sessionFactory.openSession();
-        Query query = session.createQuery("FROM Customer");
-        List<Customer> result = query.list();
-        session.close();
-        return result;
+        return super.getAll();
     }
 
     @Override
     public void update(Customer customer) {
-        Session session = this.sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-        session.update(customer);
-        transaction.commit();
-        session.close();
+        super.update(customer);
     }
 }
