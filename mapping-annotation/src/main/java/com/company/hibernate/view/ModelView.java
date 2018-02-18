@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public abstract class ModelView<T> {
     private AbstractJpaDao<T> abstractJpaDao;
-    private Scanner in = new Scanner(System.in);
+    private Scanner in = MainView.getScanner();
 
     public final void setClass(AbstractJpaDao<T> abstractJpaDao){
         this.abstractJpaDao = abstractJpaDao;

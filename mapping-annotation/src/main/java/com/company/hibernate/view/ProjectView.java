@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class ProjectView extends ModelView<Project> {
     private ProjectDaoImpl projectDao = new ProjectDaoImpl();
-    private Scanner in = MainView.SCANNER;
+    private Scanner in = MainView.getScanner();
 
     public ProjectView(){
         super.setClass(projectDao);

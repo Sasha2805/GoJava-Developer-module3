@@ -3,7 +3,7 @@ package com.company.hibernate.view;
 import java.util.Scanner;
 
 public class MainView {
-    public static final Scanner SCANNER = new Scanner(System.in);
+    private static final Scanner SCANNER = new Scanner(System.in);
     private static DeveloperView developerView = new DeveloperView();
     private static ProjectView projectView = new ProjectView();
     private static CustomerView customerView = new CustomerView();
@@ -52,5 +52,9 @@ public class MainView {
             System.out.println("You entered an invalid number...Enter the number again.");
             selectEntity();
         }
+    }
+
+    public static Scanner getScanner() {
+        return SCANNER;
     }
 }
