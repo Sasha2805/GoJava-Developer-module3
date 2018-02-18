@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.company.hibernate.model.Skill" table="skills">
+        <id name="id" type="java.lang.Long" column="id">
+            <generator class="native"/>
+        </id>
+
+        <property name="skill" type="java.lang.String" column="skill"/>
+
+        <property name="skillLevel" column="skill_level">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">com.company.hibernate.model.enums.SkillLevel</param>
+                <param name="useNamed">true</param>
+            </type>
+        </property>
+
+        <set name="developers" table="developer_skills" cascade="all" inverse="true" fetch="select" lazy="false">
+            <key>
+                <column name="skill_id"/>
+            </key>
+            <many-to-many entity-name="com.company.hibernate.model.Developer">
+                <column name="developer_id"/>
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.company.hibernate.model.Developer" table="developers">
+        <id name="id" type="java.lang.Long" column="id" >
+            <generator class="native"/>
+        </id>
+
+        <property name="firstName" type="java.lang.String" column="first_name"/>
+        <property name="lastName" type="java.lang.String" column="last_name"/>
+        <property name="age" type="java.lang.Integer" column="age"/>
+
+        <property name="gender" column="gender">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">com.company.hibernate.model.enums.Gender</param>
+                <param name="useNamed">true</param>
+            </type>
+        </property>
+
+        <property name="salary" type="java.math.BigDecimal" column="salary"/>
+
+        <set name="skills" table="developer_skills" cascade="all" inverse="true" fetch="select" lazy="false">
+            <key>
+                <column name="developer_id"/>
+            </key>
+            <many-to-many entity-name="com.company.hibernate.model.Skill">
+                <column name="skill_id"/>
+            </many-to-many>
+        </set>
+
+        <set name="projects" table="developer_projects" cascade="all" inverse="true" fetch="select" lazy="false">
+            <key>
+                <column name="developer_id"/>
+            </key>
+            <many-to-many entity-name="com.company.hibernate.model.Project">
+                <column name="project_id"/>
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

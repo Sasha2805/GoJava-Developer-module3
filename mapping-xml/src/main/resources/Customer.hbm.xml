@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.company.hibernate.model.Customer" table="customers">
+        <id name="id" type="java.lang.Long" column="id" >
+            <generator class="native"/>
+        </id>
+
+        <property name="firstName" type="java.lang.String" column="first_name"/>
+        <property name="lastName" type="java.lang.String" column="last_name"/>
+        <property name="info" type="java.lang.String" column="info"/>
+
+        <set name="projects" table="customer_projects" cascade="all" inverse="true" fetch="select" lazy="false">
+            <key>
+                <column name="customer_id"/>
+            </key>
+            <many-to-many entity-name="com.company.hibernate.model.Project">
+                <column name="project_id"/>
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

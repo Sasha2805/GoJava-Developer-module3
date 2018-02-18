@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.company.hibernate.model.Project" table="projects">
+        <id name="id" type="java.lang.Long" column="id" >
+            <generator class="native"/>
+        </id>
+
+        <property name="name" type="java.lang.String" column="name"/>
+        <property name="info" type="java.lang.String" column="info"/>
+        <property name="cost" type="java.math.BigDecimal" column="cost"/>
+
+        <set name="developers" table="developer_projects" cascade="all" inverse="true" fetch="select" lazy="false">
+            <key>
+                <column name="project_id"/>
+            </key>
+            <many-to-many entity-name="com.company.hibernate.model.Developer">
+                <column name="developer_id"/>
+            </many-to-many>
+        </set>
+
+        <set name="companies" table="company_projects" cascade="all" inverse="true" fetch="select" lazy="false">
+            <key>
+                <column name="project_id"/>
+            </key>
+            <many-to-many entity-name="com.company.hibernate.model.Company">
+                <column name="company_id"/>
+            </many-to-many>
+        </set>
+
+        <set name="customers" table="customer_projects" cascade="all" inverse="true" fetch="select" lazy="false">
+            <key>
+                <column name="project_id"/>
+            </key>
+            <many-to-many entity-name="com.company.hibernate.model.Customer">
+                <column name="customer_id"/>
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>
