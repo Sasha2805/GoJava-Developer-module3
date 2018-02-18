@@ -1,5 +1,8 @@
 package com.company.hibernate.model;
 
+import java.util.HashSet;
+import java.util.Set;
+import com.company.hibernate.model.enums.SkillLevel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,12 +11,12 @@ import lombok.Setter;
 public class Skill {
     private Long id;
     private String skill;
-    private String skillLevel;
+    private SkillLevel skillLevel;
+    private Set<Developer> developers = new HashSet<>(0);
 
     public Skill(){}
 
-    public Skill(Long id, String skill, String skillLevel) {
-        this.id = id;
+    public Skill(String skill, SkillLevel skillLevel) {
         this.skill = skill;
         this.skillLevel = skillLevel;
     }
