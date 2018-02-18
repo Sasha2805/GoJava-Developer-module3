@@ -33,6 +33,7 @@ cmake-build-release/
 .idea/
 *.iws
 *.iml
+*.log
 
 ## Plugin-specific files:
 
